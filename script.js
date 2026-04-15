@@ -1,28 +1,40 @@
-// Déclaration du tableau contenant la liste des mots proposés à l'utilisateur
-const listeMots = ['Cachalot', 'Pétunia', 'Serviette']
+console.log("Hello World");
+
+
+
+const listeMots=["Cachalot", "Pétunia", "serviette"]
 let score = 0
+const listePhrases=["Pas de panique !", "La vie, l'univers et le reste","Merci pour le poisson",]
 
-// Déclaration de la variable contenant le mot saisi par l'utilisateur
-// Le prompt sert à afficher une popup demandant à l'utilisateur de saisir un mot
-let motUtilisateur = prompt('Entrez le mot : ' + listeMots[0])
-
-// Vérification du mot saisi par l'utilisateur : on vérifie qu'il correspond au premier mot du tableau "listeMots"
-if (motUtilisateur === listeMots[0]) {
-    score++
+let choix= prompt('veuillez choisir entre: mots et phrases')
+while( choix !== 'mots'& choix !=='phrases'){
+    choix= prompt('veuillez choisir entre: mots et phrases')
 }
 
-// Idem avec le second mot du tableau
-// Notez l'absence du "let" devant la déclaration de la variable "motUtilisateur", cela permet de réutiliser la variable déclarée précédemment
-motUtilisateur = prompt('Entrez le mot : ' + listeMots[1])
-if (motUtilisateur === listeMots[1]) {
-    score++
+if (choix=='mots'){
+    for(let i=0; i<listeMots.length; i++ ){
+    let motUtilisateur = prompt("entrez le mot: " +listeMots [i])
+
+    if (motUtilisateur===listeMots [0]){
+   score++
+      console.log('votre score est de: '+score+'sur '+listePhrases.length)
+
+   
+}
 }
 
-// Idem avec le troisième mot du tableau
-motUtilisateur = prompt('Entrez le mot : ' + listeMots[2])
-if (motUtilisateur === listeMots[2]) {
-    score++
+} else {
+    for(let i=0; i<listePhrases.length; i++ ){
+    let motUtilisateur = prompt("entrez le mot: " +listePhrases [i])
+
+    if (motUtilisateur===listePhrases [0]){
+   score++
+   console.log('votre score est de: '+score+'sur '+listePhrases.length)
+
+}
+}
 }
 
-// Affichage du score de l'utilisateur
-console.log("Votre score est de " + score + " sur 3")
+
+
+
